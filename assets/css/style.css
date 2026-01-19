@@ -1009,3 +1009,17 @@ textarea{
   .scroll-dot::before{ animation: none; }
   .mycelium-ui.on .branch{ animation: none; stroke-dashoffset: 0; }
 }
+
+/* Show header on phones even during the scroll story */
+@media (max-width: 900px){
+  .site-header.header-hidden{
+    transform: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* push the story down so it doesn't sit under the sticky header */
+  .story{
+    padding-top: 72px;
+  }
+}
