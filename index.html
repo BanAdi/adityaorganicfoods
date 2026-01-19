@@ -1,419 +1,534 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aditya Organic Foods | Button Mushrooms</title>
-  <meta name="description" content="Aditya Organic Foods — premium button mushrooms grown in controlled rooms in Rudrapur, Uttarakhand. Reliable year-round supply." />
-  <link rel="stylesheet" href="assets/css/style.css" />
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aditya Organic Foods | Button Mushrooms</title>
+    <meta
+      name="description"
+      content="Aditya Organic Foods — premium button mushrooms grown in controlled rooms in Rudrapur, Uttarakhand. Reliable year-round supply."
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-<body>
-  <!-- progress bar -->
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <body>
+    <!-- progress bar -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-  <!-- Header starts hidden, becomes visible after story -->
-  <header class="site-header header-hidden" id="siteHeader">
-    <div class="container nav">
-      <a class="brand" href="index.html" aria-label="Aditya Organic Foods Home">
-        <span class="logo" aria-hidden="true"></span>
-        <span class="brand-text">Aditya Organic Foods</span>
-      </a>
+    <!-- Header starts hidden, becomes visible after story -->
+    <header class="site-header header-hidden" id="siteHeader">
+      <div class="container nav">
+        <a
+          class="brand"
+          href="index.html"
+          aria-label="Aditya Organic Foods Home"
+        >
+          <span class="logo" aria-hidden="true"></span>
+          <span class="brand-text">Aditya Organic Foods</span>
+        </a>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+        <button
+          class="menu-btn"
+          id="menuBtn"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
 
-      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
-        <a href="index.html" class="active">Home</a>
-        <a href="pages/gallery.html">Gallery</a>
-        <a href="pages/about.html">About</a>
-        <a href="pages/contact.html">Contact</a>
-      </nav>
+        <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+          <a href="index.html" class="active">Home</a>
+          <a href="pages/gallery.html">Gallery</a>
+          <a href="pages/about.html">About</a>
+          <a href="pages/contact.html">Contact</a>
+        </nav>
 
-      <a class="btn btn-primary" href="pages/contact.html">Request a Quote</a>
-    </div>
-  </header>
+        <a class="btn btn-primary" href="pages/contact.html">Request a Quote</a>
+      </div>
+    </header>
 
-  <!-- SCROLL STORY (locks the rest of the site until complete) -->
-  <section class="story" id="story">
-    <div class="story-sticky">
-      <div class="story-stage" id="stage">
+    <!-- SCROLL STORY (locks the rest of the site until complete) -->
+    <section class="story" id="story">
+      <div class="story-sticky">
+        <div class="story-stage" id="stage">
+          <!-- 4 stacked background layers -->
+          <div
+            class="story-img"
+            id="img1"
+            style="background-image: url(&quot;assets/Images/stage-1.jpg&quot;)"
+          ></div>
+          <div
+            class="story-img"
+            id="img2"
+            style="background-image: url(&quot;assets/Images/stage-2.jpg&quot;)"
+          ></div>
+          <div
+            class="story-img"
+            id="img3"
+            style="background-image: url(&quot;assets/Images/stage-3.jpg&quot;)"
+          ></div>
+          <div
+            class="story-img"
+            id="img4"
+            style="background-image: url(&quot;assets/Images/stage-4.jpg&quot;)"
+          ></div>
 
-        <!-- 4 stacked background layers -->
-      <div class="story-img" id="img1" style="background-image:url('assets/Images/stage-1.jpg');"></div>
-      <div class="story-img" id="img2" style="background-image:url('assets/Images/stage-2.jpg');"></div>
-      <div class="story-img" id="img3" style="background-image:url('assets/Images/stage-3.jpg');"></div>
-      <div class="story-img" id="img4" style="background-image:url('assets/Images/stage-4.jpg');"></div>
-
-        <!-- Text card -->
-        <div class="story-ui">
-          <div class="container">
-            <div class="story-card">
-              <p class="kicker" style="margin:0 0 10px;">Aditya Organic Foods</p>
-              <h1 class="story-title" id="storyTitle">From detail to delivery.</h1>
-              <p class="story-sub" id="storySub">Scroll to zoom out from the microscopic texture to the full story.</p>
-              <div class="story-hint" aria-hidden="true">
-                <span>Scroll</span>
-                <span class="scroll-dot"></span>
+          <!-- Text card -->
+          <div class="story-ui">
+            <div class="container">
+              <div class="story-card">
+                <p class="kicker" style="margin: 0 0 10px">
+                  Aditya Organic Foods
+                </p>
+                <h1 class="story-title" id="storyTitle">
+                  From detail to delivery.
+                </h1>
+                <p class="story-sub" id="storySub">
+                  Scroll to zoom out from the microscopic texture to the full
+                  story.
+                </p>
+                <div class="story-hint" aria-hidden="true">
+                  <span>Scroll</span>
+                  <span class="scroll-dot"></span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Mycelium overlay + menu pills (Stage 4) -->
-        <div class="mycelium-ui" id="myceliumUI" aria-hidden="true">
-          <svg class="mycelium-svg" viewBox="0 0 1000 600" preserveAspectRatio="none">
-            <path class="branch" d="M20,470 C180,420 260,520 380,440 C520,335 610,365 720,260 C820,170 900,160 980,120" />
-            <path class="branch" d="M10,520 C140,500 260,560 330,520 C420,460 520,520 610,440 C700,360 820,420 980,320" />
-            <path class="branch" d="M60,380 C220,320 280,380 360,340 C450,280 540,300 620,240 C740,150 820,210 960,160" />
-          </svg>
+          <!-- Mycelium overlay + menu pills (Stage 4) -->
+          <div class="mycelium-ui" id="myceliumUI" aria-hidden="true">
+            <svg
+              class="mycelium-svg"
+              viewBox="0 0 1000 600"
+              preserveAspectRatio="none"
+            >
+              <path
+                class="branch"
+                d="M20,470 C180,420 260,520 380,440 C520,335 610,365 720,260 C820,170 900,160 980,120"
+              />
+              <path
+                class="branch"
+                d="M10,520 C140,500 260,560 330,520 C420,460 520,520 610,440 C700,360 820,420 980,320"
+              />
+              <path
+                class="branch"
+                d="M60,380 C220,320 280,380 360,340 C450,280 540,300 620,240 C740,150 820,210 960,160"
+              />
+            </svg>
 
-          <div class="menu-reveal" id="menuReveal">
-            <a class="menu-pill" href="#main" id="enterBtn">Enter site</a>
-            <a class="menu-pill" href="pages/gallery.html">Gallery</a>
-            <a class="menu-pill" href="pages/about.html">About</a>
-            <a class="menu-pill" href="pages/contact.html">Contact</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- MAIN SITE (hidden until story completes) -->
-  <main id="main" class="main-hidden">
-
-    <section class="hero hero-compact">
-      <div
-        class="hero-media"
-        style="background-image:url('assets/Images/mushroom-hero.jpg');"
-        role="img"
-        aria-label="Fresh white button mushrooms close-up"
-      ></div>
-
-      <div class="humidity-layer" aria-hidden="true"></div>
-
-      <div class="container hero-content">
-        <p class="kicker reveal">Wholesale supply • business buyers</p>
-        <h1 class="reveal">Premium button mushrooms, grown in controlled rooms.</h1>
-        <p class="sub reveal">
-          Based in Rudrapur, Uttarakhand. Indoor temperature &amp; humidity controlled rooms for consistent quality
-          and dependable year-round supply.
-        </p>
-
-        <div class="hero-actions reveal">
-          <a class="btn btn-primary" href="pages/contact.html">Request wholesale quote</a>
-          <a class="btn btn-ghost" href="pages/about.html">Learn about our process</a>
-        </div>
-
-        <div class="stats" aria-label="Key highlights">
-          <div class="stat reveal">
-            <strong>Consistent grading</strong>
-            <span>Uniform caps &amp; texture</span>
-          </div>
-          <div class="stat reveal">
-            <strong>Fast dispatch</strong>
-            <span>Cold-chain friendly</span>
-          </div>
-          <div class="stat reveal">
-            <strong>Standing orders</strong>
-            <span>Daily / alternate supply</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section reveal">
-      <div class="container">
-        <div class="grid-3">
-          <article class="card reveal">
-            <h2>Pack sizes</h2>
-            <p>Retail packs (200g / 500g / 1kg) and bulk crates for kitchens and stores.</p>
-            <p class="mini">Custom labeling optional</p>
-          </article>
-
-          <article class="card reveal">
-            <h2>Wholesale terms</h2>
-            <p>MOQ, weekly standing orders, quality grading, and predictable dispatch windows.</p>
-            <p class="mini">Invoice-ready</p>
-          </article>
-
-          <article class="card reveal">
-            <h2>Delivery &amp; coverage</h2>
-            <p>Rudrapur base with regular routes to nearby markets (we’ll add your exact areas).</p>
-            <p class="mini">Reliable schedules</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-tight reveal">
-      <div class="container">
-        <h2 class="section-title reveal">Key product features</h2>
-
-        <div class="grid-3 media-grid">
-          <figure class="media-card reveal">
-            <img src="assets/Images/mushroom-hero.jpg" alt="Fresh white button mushrooms close-up" loading="lazy" />
-            <figcaption>
-              <strong>Fresh harvest</strong>
-              <span>Clean, firm caps—ideal for wholesale buyers.</span>
-            </figcaption>
-          </figure>
-
-          <figure class="media-card reveal">
-            <img src="assets/Images/mushroom-pile.jpg" alt="Pile of white button mushrooms" loading="lazy" />
-            <figcaption>
-              <strong>Consistent grading</strong>
-              <span>Uniform sizing for predictable prep and display.</span>
-            </figcaption>
-          </figure>
-
-          <figure class="media-card reveal">
-            <img src="assets/Images/mushroom-farm.jpg" alt="Button mushrooms growing in an indoor farm" loading="lazy" />
-            <figcaption>
-              <strong>Indoor cultivation</strong>
-              <span>Controlled rooms support steady supply and quality.</span>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section reveal">
-      <div class="container">
-        <div class="cta-card reveal">
-          <div>
-            <h2>Request a wholesale quote</h2>
-            <p>
-              Tell us your expected weekly quantity, pack preference, delivery frequency, and location.
-              We’ll respond quickly with availability and pricing.
-            </p>
-            <div class="cta-actions">
-              <a class="btn btn-primary" href="pages/contact.html">Go to contact</a>
-              <a class="btn btn-ghost" href="pages/gallery.html">View gallery</a>
+            <div class="menu-reveal" id="menuReveal">
+              <a class="menu-pill" href="#main" id="enterBtn">Enter site</a>
+              <a class="menu-pill" href="pages/gallery.html">Gallery</a>
+              <a class="menu-pill" href="pages/about.html">About</a>
+              <a class="menu-pill" href="pages/contact.html">Contact</a>
             </div>
           </div>
-
-          <div class="cta-side" aria-label="Suggested quote details">
-            <strong>Helpful details</strong>
-            <ul>
-              <li>Weekly qty (kg)</li>
-              <li>Pack type (retail / bulk)</li>
-              <li>Delivery frequency</li>
-              <li>City / area</li>
-              <li>Phone / WhatsApp</li>
-            </ul>
-          </div>
         </div>
       </div>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container footer">
-      <p>© <span id="year"></span> Aditya Organic Foods</p>
-      <p>Wholesale button mushrooms • Rudrapur, Uttarakhand</p>
-    </div>
-  </footer>
+    <!-- MAIN SITE (hidden until story completes) -->
+    <main id="main" class="main-hidden">
+      <section class="hero hero-compact">
+        <div
+          class="hero-media"
+          style="
+            background-image: url(&quot;assets/Images/mushroom-hero.jpg&quot;);
+          "
+          role="img"
+          aria-label="Fresh white button mushrooms close-up"
+        ></div>
 
-  <script>
-    // year
-    const yearEl = document.getElementById("year");
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
+        <div class="humidity-layer" aria-hidden="true"></div>
 
-    // mobile menu
-    const btn = document.getElementById("menuBtn");
-    const nav = document.getElementById("navLinks");
-    if (btn && nav) {
-      btn.addEventListener("click", () => {
-        const isOpen = nav.classList.toggle("open");
-        btn.setAttribute("aria-expanded", String(isOpen));
-      });
-      document.addEventListener("click", (e) => {
-        if (!nav.classList.contains("open")) return;
-        const clickedInside = nav.contains(e.target) || btn.contains(e.target);
-        if (!clickedInside) {
-          nav.classList.remove("open");
-          btn.setAttribute("aria-expanded", "false");
-        }
-      });
-    }
+        <div class="container hero-content">
+          <p class="kicker reveal">Wholesale supply • business buyers</p>
+          <h1 class="reveal">
+            Premium button mushrooms, grown in controlled rooms.
+          </h1>
+          <p class="sub reveal">
+            Based in Rudrapur, Uttarakhand. Indoor temperature &amp; humidity
+            controlled rooms for consistent quality and dependable year-round
+            supply.
+          </p>
 
-    // === SCROLL STORY CONTROLLER ===
-    const story = document.getElementById("story");
-    const header = document.getElementById("siteHeader");
-    const main = document.getElementById("main");
-    const progress = document.getElementById("scrollProgress");
+          <div class="hero-actions reveal">
+            <a class="btn btn-primary" href="pages/contact.html"
+              >Request wholesale quote</a
+            >
+            <a class="btn btn-ghost" href="pages/about.html"
+              >Learn about our process</a
+            >
+          </div>
 
-    const img1 = document.getElementById("img1");
-    const img2 = document.getElementById("img2");
-    const img3 = document.getElementById("img3");
-    const img4 = document.getElementById("img4");
+          <div class="stats" aria-label="Key highlights">
+            <div class="stat reveal">
+              <strong>Consistent grading</strong>
+              <span>Uniform caps &amp; texture</span>
+            </div>
+            <div class="stat reveal">
+              <strong>Fast dispatch</strong>
+              <span>Cold-chain friendly</span>
+            </div>
+            <div class="stat reveal">
+              <strong>Standing orders</strong>
+              <span>Daily / alternate supply</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    const title = document.getElementById("storyTitle");
-    const sub = document.getElementById("storySub");
+      <section class="section reveal">
+        <div class="container">
+          <div class="grid-3">
+            <article class="card reveal">
+              <h2>Pack sizes</h2>
+              <p>
+                Retail packs (200g / 500g / 1kg) and bulk crates for kitchens
+                and stores.
+              </p>
+              <p class="mini">Custom labeling optional</p>
+            </article>
 
-    const myceliumUI = document.getElementById("myceliumUI");
-    const menuReveal = document.getElementById("menuReveal");
-    const enterBtn = document.getElementById("enterBtn");
+            <article class="card reveal">
+              <h2>Wholesale terms</h2>
+              <p>
+                MOQ, weekly standing orders, quality grading, and predictable
+                dispatch windows.
+              </p>
+              <p class="mini">Invoice-ready</p>
+            </article>
 
-    // set initial visibility
-    function setStage(op1, op2, op3, op4){
-      img1.style.opacity = op1;
-      img2.style.opacity = op2;
-      img3.style.opacity = op3;
-      img4.style.opacity = op4;
-    }
-    setStage(1,0,0,0);
+            <article class="card reveal">
+              <h2>Delivery &amp; coverage</h2>
+              <p>
+                Rudrapur base with regular routes to nearby markets (we’ll add
+                your exact areas).
+              </p>
+              <p class="mini">Reliable schedules</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-    function clamp(v,min,max){ return Math.max(min, Math.min(max, v)); }
-    function lerp(a,b,t){ return a + (b-a)*t; }
+      <section class="section section-tight reveal">
+        <div class="container">
+          <h2 class="section-title reveal">Key product features</h2>
 
-    function onScroll(){
-      const rect = story.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const total = rect.height - vh;
+          <div class="grid-3 media-grid">
+            <figure class="media-card reveal">
+              <img
+                src="assets/Images/mushroom-hero.jpg"
+                alt="Fresh white button mushrooms close-up"
+                loading="lazy"
+              />
+              <figcaption>
+                <strong>Fresh harvest</strong>
+                <span>Clean, firm caps—ideal for wholesale buyers.</span>
+              </figcaption>
+            </figure>
 
-      // how far into the story (0..1)
-      const scrolled = clamp((-rect.top) / (total <= 0 ? 1 : total), 0, 1);
+            <figure class="media-card reveal">
+              <img
+                src="assets/Images/mushroom-pile.jpg"
+                alt="Pile of white button mushrooms"
+                loading="lazy"
+              />
+              <figcaption>
+                <strong>Consistent grading</strong>
+                <span>Uniform sizing for predictable prep and display.</span>
+              </figcaption>
+            </figure>
 
-      // top progress bar
-      if (progress) progress.style.transform = `scaleX(${scrolled})`;
+            <figure class="media-card reveal">
+              <img
+                src="assets/Images/mushroom-farm.jpg"
+                alt="Button mushrooms growing in an indoor farm"
+                loading="lazy"
+              />
+              <figcaption>
+                <strong>Indoor cultivation</strong>
+                <span>Controlled rooms support steady supply and quality.</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
 
-      // split into 4 stages (0-0.33-0.66-1)
-      // stage 1 -> 2 crossfade
-      const t1 = clamp(scrolled / 0.33, 0, 1);
-      // stage 2 -> 3 crossfade
-      const t2 = clamp((scrolled - 0.33) / 0.33, 0, 1);
-      // stage 3 -> 4 crossfade
-      const t3 = clamp((scrolled - 0.66) / 0.34, 0, 1);
+      <section class="section reveal">
+        <div class="container">
+          <div class="cta-card reveal">
+            <div>
+              <h2>Request a wholesale quote</h2>
+              <p>
+                Tell us your expected weekly quantity, pack preference, delivery
+                frequency, and location. We’ll respond quickly with availability
+                and pricing.
+              </p>
+              <div class="cta-actions">
+                <a class="btn btn-primary" href="pages/contact.html"
+                  >Go to contact</a
+                >
+                <a class="btn btn-ghost" href="pages/gallery.html"
+                  >View gallery</a
+                >
+              </div>
+            </div>
 
-      // opacities
-      const o1 = 1 - t1;
-      const o2 = t1 * (1 - t2);
-      const o3 = t2 * (1 - t3);
-      const o4 = t3;
+            <div class="cta-side" aria-label="Suggested quote details">
+              <strong>Helpful details</strong>
+              <ul>
+                <li>Weekly qty (kg)</li>
+                <li>Pack type (retail / bulk)</li>
+                <li>Delivery frequency</li>
+                <li>City / area</li>
+                <li>Phone / WhatsApp</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-      setStage(o1, o2, o3, o4);
+    <footer class="site-footer">
+      <div class="container footer">
+        <p>© <span id="year"></span> Aditya Organic Foods</p>
+        <p>Wholesale button mushrooms • Rudrapur, Uttarakhand</p>
+      </div>
+    </footer>
 
-      // zoom-out feel
-      const scale = lerp(1.25, 1.02, scrolled);
-      const blur = lerp(0, 0, scrolled);
-      [img1,img2,img3,img4].forEach(el=>{
-        el.style.transform = `scale(${scale})`;
-        el.style.filter = `blur(${blur}px)`;
-      });
+    <script>
+      // year
+      const yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-      // text updates by stage
-      if (scrolled < 0.33) {
-        title.textContent = "From detail to delivery.";
-        sub.textContent = "Freshness starts at the smallest details — clean texture, clean handling.";
-        myceliumUI.classList.remove("on");
-        menuReveal.classList.remove("on");
-      } else if (scrolled < 0.66) {
-        title.textContent = "The reveal.";
-        sub.textContent = "A pattern becomes a mushroom — structure you can trust.";
-        myceliumUI.classList.remove("on");
-        menuReveal.classList.remove("on");
-      } else if (scrolled < 0.92) {
-        title.textContent = "The full picture.";
-        sub.textContent = "Grown with consistency so buyers get predictable grading and supply.";
-        myceliumUI.classList.remove("on");
-        menuReveal.classList.remove("on");
-      } else {
-        title.textContent = "Underneath it all: the network.";
-        sub.textContent = "Quality you can count on — from room to route.";
-        myceliumUI.classList.add("on");
-        menuReveal.classList.add("on");
+      // mobile menu
+      const btn = document.getElementById("menuBtn");
+      const nav = document.getElementById("navLinks");
+      if (btn && nav) {
+        btn.addEventListener("click", () => {
+          const isOpen = nav.classList.toggle("open");
+          btn.setAttribute("aria-expanded", String(isOpen));
+        });
+        document.addEventListener("click", (e) => {
+          if (!nav.classList.contains("open")) return;
+          const clickedInside =
+            nav.contains(e.target) || btn.contains(e.target);
+          if (!clickedInside) {
+            nav.classList.remove("open");
+            btn.setAttribute("aria-expanded", "false");
+          }
+        });
       }
 
-      // unlock site at the end
-      // unlock site at the end (lock only once)
-window.__siteUnlocked = window.__siteUnlocked || false;
+      // === SCROLL STORY CONTROLLER ===
+      const story = document.getElementById("story");
+      const header = document.getElementById("siteHeader");
+      const main = document.getElementById("main");
+      const progress = document.getElementById("scrollProgress");
 
-if (!window.__siteUnlocked && scrolled > 0.98) {
-  window.__siteUnlocked = true;
-  header.classList.remove("header-hidden");
-  header.classList.add("header-solid");
-  main.classList.remove("main-hidden");
-}
+      const img1 = document.getElementById("img1");
+      const img2 = document.getElementById("img2");
+      const img3 = document.getElementById("img3");
+      const img4 = document.getElementById("img4");
 
-// once unlocked, never hide header/main again
-if (window.__siteUnlocked) {
-  header.classList.remove("header-hidden");
-  header.classList.add("header-solid");
-  main.classList.remove("main-hidden");
-}
-    }
+      const title = document.getElementById("storyTitle");
+      const sub = document.getElementById("storySub");
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    onScroll();
-    const isMobile = window.matchMedia("(max-width: 900px)").matches;
+      const myceliumUI = document.getElementById("myceliumUI");
+      const menuReveal = document.getElementById("menuReveal");
+      const enterBtn = document.getElementById("enterBtn");
 
-if (isMobile) {
-  // stop relying on scroll
-  window.removeEventListener("scroll", onScroll);
+      // set initial visibility
+      function setStage(op1, op2, op3, op4) {
+        img1.style.opacity = op1;
+        img2.style.opacity = op2;
+        img3.style.opacity = op3;
+        img4.style.opacity = op4;
+      }
+      setStage(1, 0, 0, 0);
 
-  let stage = 0;
-  const stages = [
-    { t: "From detail to delivery.", s: "Freshness starts at the smallest details — clean texture, clean handling." },
-    { t: "The reveal.", s: "Controlled rooms = consistent structure you can trust." },
-    { t: "The full picture.", s: "Grown with consistency so buyers get predictable grading and supply." },
-    { t: "Underneath it all: the network.", s: "Explore: Gallery for real photos, About for process, Contact for orders." },
-  ];
+      function clamp(v, min, max) {
+        return Math.max(min, Math.min(max, v));
+      }
+      function lerp(a, b, t) {
+        return a + (b - a) * t;
+      }
 
-  function renderStage(i){
-    // crossfade like scroll does
-    setStage(i === 0 ? 1:0, i === 1 ? 1:0, i === 2 ? 1:0, i === 3 ? 1:0);
+      function onScroll() {
+        const rect = story.getBoundingClientRect();
+        const vh = window.innerHeight;
+        const total = rect.height - vh;
 
-    title.textContent = stages[i].t;
-    sub.textContent = stages[i].s;
+        // how far into the story (0..1)
+        const scrolled = clamp(-rect.top / (total <= 0 ? 1 : total), 0, 1);
 
-    if (i === 3) {
-      myceliumUI.classList.add("on");
-      menuReveal.classList.add("on");
-      header.classList.remove("header-hidden");
-      header.classList.add("header-solid");
-      main.classList.remove("main-hidden");
-    } else {
-      myceliumUI.classList.remove("on");
-      menuReveal.classList.remove("on");
-    }
-  }
+        // top progress bar
+        if (progress) progress.style.transform = `scaleX(${scrolled})`;
 
-  renderStage(0);
+        // split into 4 stages (0-0.33-0.66-1)
+        // stage 1 -> 2 crossfade
+        const t1 = clamp(scrolled / 0.33, 0, 1);
+        // stage 2 -> 3 crossfade
+        const t2 = clamp((scrolled - 0.33) / 0.33, 0, 1);
+        // stage 3 -> 4 crossfade
+        const t3 = clamp((scrolled - 0.66) / 0.34, 0, 1);
 
-  // Tap anywhere to advance
-  document.getElementById("stage").addEventListener("click", () => {
-    stage = Math.min(3, stage + 1);
-    renderStage(stage);
-  });
+        // opacities
+        const o1 = 1 - t1;
+        const o2 = t1 * (1 - t2);
+        const o3 = t2 * (1 - t3);
+        const o4 = t3;
 
-  // Make story not crazy tall on mobile
-  story.style.height = "120vh";
-}
-    // "Enter site" smooth scroll
-    if (enterBtn) {
-      enterBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        // jump near the end of story, then scroll to main
-        window.scrollTo({ top: story.offsetTop + story.offsetHeight - window.innerHeight - 2, behavior: "smooth" });
-        setTimeout(() => {
-          document.getElementById("main").scrollIntoView({ behavior: "smooth" });
-        }, 700);
-      });
-    }
+        setStage(o1, o2, o3, o4);
 
-    // scroll reveal for rest of site
-    const revealEls = document.querySelectorAll(".reveal");
-    if (revealEls.length) {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
-      }, { threshold: 0.12 });
-      revealEls.forEach(el => io.observe(el));
-    }
-  </script>
-</body>
+        // zoom-out feel
+        const scale = lerp(1.25, 1.02, scrolled);
+        const blur = lerp(0, 0, scrolled);
+        [img1, img2, img3, img4].forEach((el) => {
+          el.style.transform = `scale(${scale})`;
+          el.style.filter = `blur(${blur}px)`;
+        });
+
+        // text updates by stage
+        if (scrolled < 0.33) {
+          title.textContent = "From detail to delivery.";
+          sub.textContent =
+            "Freshness starts at the smallest details — clean texture, clean handling.";
+          myceliumUI.classList.remove("on");
+          menuReveal.classList.remove("on");
+        } else if (scrolled < 0.66) {
+          title.textContent = "The reveal.";
+          sub.textContent =
+            "A pattern becomes a mushroom — structure you can trust.";
+          myceliumUI.classList.remove("on");
+          menuReveal.classList.remove("on");
+        } else if (scrolled < 0.92) {
+          title.textContent = "The full picture.";ß
+          sub.textContent =
+            "Grown with consistency so buyers get predictable grading and supply.";
+          myceliumUI.classList.remove("on");
+          menuReveal.classList.remove("on");
+        } else {
+          title.textContent = "Underneath it all: the network.";
+          sub.textContent = "Quality you can count on — from room to route.";
+          myceliumUI.classList.add("on");
+          menuReveal.classList.add("on");
+        }
+
+        // unlock site at the end
+        // unlock site at the end (lock only once)
+        window.__siteUnlocked = window.__siteUnlocked || false;
+
+        if (!window.__siteUnlocked && scrolled > 0.98) {
+          window.__siteUnlocked = true;
+          header.classList.remove("header-hidden");
+          header.classList.add("header-solid");
+          main.classList.remove("main-hidden");
+        }
+
+        // once unlocked, never hide header/main again
+        if (window.__siteUnlocked) {
+          header.classList.remove("header-hidden");
+          header.classList.add("header-solid");
+          main.classList.remove("main-hidden");
+        }
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll);
+      onScroll();
+      const isMobile = window.matchMedia("(max-width: 900px)").matches;
+
+      if (isMobile) {
+        // stop relying on scroll
+        window.removeEventListener("scroll", onScroll);
+
+        let stage = 0;
+        const stages = [
+          {
+            t: "From detail to delivery.",
+            s: "Freshness starts at the smallest details — clean texture, clean handling.",
+          },
+          {
+            t: "The reveal.",
+            s: "Controlled rooms = consistent structure you can trust.",
+          },
+          {
+            t: "The full picture.",
+            s: "Grown with consistency so buyers get predictable grading and supply.",
+          },
+          {
+            t: "Underneath it all: the network.",
+            s: "Explore: Gallery for real photos, About for process, Contact for orders.",
+          },
+        ];
+
+        function renderStage(i) {
+          // crossfade like scroll does
+          setStage(
+            i === 0 ? 1 : 0,
+            i === 1 ? 1 : 0,
+            i === 2 ? 1 : 0,
+            i === 3 ? 1 : 0,
+          );
+
+          title.textContent = stages[i].t;
+          sub.textContent = stages[i].s;
+
+          if (i === 3) {
+            myceliumUI.classList.add("on");
+            menuReveal.classList.add("on");
+            header.classList.remove("header-hidden");
+            header.classList.add("header-solid");
+            main.classList.remove("main-hidden");
+          } else {
+            myceliumUI.classList.remove("on");
+            menuReveal.classList.remove("on");
+          }
+        }
+
+        renderStage(0);
+
+        // Tap anywhere to advance
+        document.getElementById("stage").addEventListener("click", () => {
+          stage = Math.min(3, stage + 1);
+          renderStage(stage);
+        });
+
+        // Make story not crazy tall on mobile
+        story.style.height = "120vh";
+      }
+      // "Enter site" smooth scroll
+      if (enterBtn) {
+        enterBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          // jump near the end of story, then scroll to main
+          window.scrollTo({
+            top: story.offsetTop + story.offsetHeight - window.innerHeight - 2,
+            behavior: "smooth",
+          });
+          setTimeout(() => {
+            document
+              .getElementById("main")
+              .scrollIntoView({ behavior: "smooth" });
+          }, 700);
+        });
+      }
+
+      // scroll reveal for rest of site
+      const revealEls = document.querySelectorAll(".reveal");
+      if (revealEls.length) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) e.target.classList.add("show");
+            });
+          },
+          { threshold: 0.12 },
+        );
+        revealEls.forEach((el) => io.observe(el));
+      }
+    </script>
+  </body>
 </html>
