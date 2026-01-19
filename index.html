@@ -329,16 +329,22 @@
       }
 
       // unlock site at the end
-      const done = scrolled > 0.98;
-      if (done) {
-        header.classList.remove("header-hidden");
-        header.classList.add("header-solid");
-        main.classList.remove("main-hidden");
-      } else {
-        header.classList.add("header-hidden");
-        header.classList.remove("header-solid");
-        main.classList.add("main-hidden");
-      }
+      // unlock site at the end (lock only once)
+window.__siteUnlocked = window.__siteUnlocked || false;
+
+if (!window.__siteUnlocked && scrolled > 0.98) {
+  window.__siteUnlocked = true;
+  header.classList.remove("header-hidden");
+  header.classList.add("header-solid");
+  main.classList.remove("main-hidden");
+}
+
+// once unlocked, never hide header/main again
+if (window.__siteUnlocked) {
+  header.classList.remove("header-hidden");
+  header.classList.add("header-solid");
+  main.classList.remove("main-hidden");
+}
     }
 
     window.addEventListener("scroll", onScroll, { passive: true });
