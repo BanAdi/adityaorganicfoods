@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Aditya Organic Foods</title>
+  <meta name="description" content="Contact Aditya Organic Foods for wholesale button mushroom supply." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="../index.html" aria-label="Aditya Organic Foods Home">
+        <span class="logo" aria-hidden="true"></span>
+        <span class="brand-text">Aditya Organic Foods</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="../index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+
+      <a class="btn btn-primary" href="contact.html">Request a Quote</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero reveal">
+      <div class="container">
+        <p class="kicker reveal">Contact</p>
+        <h1 class="page-title reveal">Request a quote / place an order</h1>
+        <p class="page-sub reveal">
+          The fastest way is WhatsApp or a call. Share your weekly quantity, pack preference, and delivery location.
+        </p>
+
+        <div class="page-actions reveal">
+          <!-- Replace with your real number (no +, no spaces) -->
+          <a class="btn btn-primary" href="https://wa.me/91YOURNUMBER" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-ghost" href="tel:+91YOURNUMBER">Call</a>
+          <a class="btn btn-ghost" href="mailto:hello@adityaorganicfoods.com">Email</a>
+          <a class="btn btn-ghost" href="../index.html">Back to Home</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container contact-grid">
+        <div class="card reveal">
+          <h2>Direct contact</h2>
+          <p class="mini">Replace these placeholders with your real details.</p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <strong>Phone / WhatsApp</strong>
+              <span>+91 XXXXX XXXXX</span>
+            </div>
+            <div class="contact-item">
+              <strong>Email</strong>
+              <span>hello@adityaorganicfoods.com</span>
+            </div>
+            <div class="contact-item">
+              <strong>Location</strong>
+              <span>Rudrapur, Uttarakhand</span>
+            </div>
+            <div class="contact-item">
+              <strong>Business hours</strong>
+              <span>Mon–Sat • 9:00–18:00</span>
+            </div>
+          </div>
+
+          <div class="contact-cta">
+            <a class="btn btn-primary" href="https://wa.me/91YOURNUMBER" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-ghost" href="tel:+91YOURNUMBER">Call</a>
+            <a class="btn btn-ghost" href="mailto:hello@adityaorganicfoods.com">Email</a>
+          </div>
+        </div>
+
+        <aside class="contact-side">
+          <div class="card reveal">
+            <h2>What to message</h2>
+            <ul class="mini-list">
+              <li>Weekly requirement (kg)</li>
+              <li>Pack preference (retail packs / bulk crates)</li>
+              <li>Delivery frequency (daily / alternate / weekly)</li>
+              <li>City / area</li>
+              <li>Any grading preference</li>
+            </ul>
+          </div>
+
+          <div class="card reveal">
+            <h2>Quick WhatsApp template</h2>
+            <p class="mini">Copy-paste and edit:</p>
+            <p style="margin:0; color: rgba(226,232,240,0.82); font-size: 13px; line-height: 1.7;">
+              Hi, I’m interested in button mushrooms. <br/>
+              Weekly qty: ___ kg <br/>
+              Pack type: ___ <br/>
+              Delivery: ___ <br/>
+              Location: ___ <br/>
+              Please share pricing and availability.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Keep your WhatsApp floating button if you already added it -->
+    <!-- <a class="wa-float" href="https://wa.me/91YOURNUMBER" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a> -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer">
+      <p>© <span id="year"></span> Aditya Organic Foods</p>
+      <p>Rudrapur, Uttarakhand</p>
+    </div>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const btn = document.getElementById("menuBtn");
+    const nav = document.getElementById("navLinks");
+
+    if (btn && nav) {
+      btn.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("open");
+        btn.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      nav.querySelectorAll("a").forEach(a => {
+        a.addEventListener("click", () => {
+          nav.classList.remove("open");
+          btn.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!nav.classList.contains("open")) return;
+        const clickedInside = nav.contains(e.target) || btn.contains(e.target);
+        if (!clickedInside) {
+          nav.classList.remove("open");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+
+    /* Scroll reveal */
+    const revealEls = document.querySelectorAll(".reveal");
+    if (revealEls.length) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
+      }, { threshold: 0.12 });
+      revealEls.forEach(el => io.observe(el));
+    }
+  </script>
+</body>
+</html>

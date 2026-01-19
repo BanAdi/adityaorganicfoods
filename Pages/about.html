@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | Aditya Organic Foods</title>
+  <meta name="description" content="About Aditya Organic Foods — indoor button mushroom cultivation in Rudrapur, Uttarakhand." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="../index.html" aria-label="Aditya Organic Foods Home">
+        <span class="logo" aria-hidden="true"></span>
+        <span class="brand-text">Aditya Organic Foods</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="../index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <a class="btn btn-primary" href="contact.html">Request a Quote</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero reveal">
+      <div class="container">
+        <p class="kicker reveal">About</p>
+        <h1 class="page-title reveal">Consistent quality, grown indoors.</h1>
+        <p class="page-sub reveal">
+          Aditya Organic Foods grows button mushrooms in climate-controlled rooms in Rudrapur, Uttarakhand.
+          Our focus is simple: clean produce, predictable grading, and reliable supply for business buyers.
+        </p>
+
+        <div class="page-actions reveal">
+          <a class="btn btn-primary" href="contact.html">Request a Quote</a>
+          <a class="btn btn-ghost" href="gallery.html">See Gallery</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container about-grid">
+        <div class="about-copy card reveal">
+          <h2>What we do</h2>
+          <p>
+            We cultivate fresh button mushrooms indoors using temperature and humidity controlled rooms.
+            This helps us deliver consistent texture and size across batches—important for kitchens,
+            retailers, and wholesalers.
+          </p>
+
+          <div class="about-points">
+            <div class="stat reveal">
+              <strong>Indoor controlled rooms</strong>
+              <span>Stable conditions for reliable output.</span>
+            </div>
+            <div class="stat reveal">
+              <strong>Quality grading</strong>
+              <span>Uniform sizing for predictable use.</span>
+            </div>
+            <div class="stat reveal">
+              <strong>Reliable dispatch</strong>
+              <span>Planned schedules for regular supply.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-media reveal">
+          <img src="../assets/images/mushroom-farm.jpg" alt="Indoor mushroom cultivation (placeholder image)" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight reveal">
+      <div class="container">
+        <h2 class="section-title reveal">Our approach</h2>
+
+        <div class="grid-3">
+          <article class="card reveal">
+            <h2>1) Controlled growing</h2>
+            <p>Temperature and humidity managed to support consistent mushroom growth.</p>
+            <p class="mini">Year-round stability</p>
+          </article>
+
+          <article class="card reveal">
+            <h2>2) Grading &amp; packing</h2>
+            <p>Batch grading for uniform size and quality, packed for retail or bulk orders.</p>
+            <p class="mini">Custom packs possible</p>
+          </article>
+
+          <article class="card reveal">
+            <h2>3) Dispatch &amp; supply</h2>
+            <p>Regular dispatch windows and standing orders for predictable supply planning.</p>
+            <p class="mini">MOQ + schedules supported</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <div class="cta-card reveal">
+          <div>
+            <h2>Looking for wholesale supply?</h2>
+            <p>
+              Tell us your weekly requirement, pack type, and delivery location.
+              We’ll share availability and pricing quickly.
+            </p>
+            <div class="cta-actions">
+              <a class="btn btn-primary" href="contact.html">Contact us</a>
+              <a class="btn btn-ghost" href="../index.html">Back to Home</a>
+            </div>
+          </div>
+
+          <div class="cta-side">
+            <strong>Share these details</strong>
+            <ul>
+              <li>Weekly qty (kg)</li>
+              <li>Pack preference</li>
+              <li>Delivery frequency</li>
+              <li>City / area</li>
+              <li>Phone / WhatsApp</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WhatsApp floating button (already added by you; keep if you want) -->
+    <!-- <a class="wa-float" href="https://wa.me/91YOURNUMBER" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a> -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer">
+      <p>© <span id="year"></span> Aditya Organic Foods</p>
+      <p>Rudrapur, Uttarakhand</p>
+    </div>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const btn = document.getElementById("menuBtn");
+    const nav = document.getElementById("navLinks");
+
+    if (btn && nav) {
+      btn.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("open");
+        btn.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      nav.querySelectorAll("a").forEach(a => {
+        a.addEventListener("click", () => {
+          nav.classList.remove("open");
+          btn.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!nav.classList.contains("open")) return;
+        const clickedInside = nav.contains(e.target) || btn.contains(e.target);
+        if (!clickedInside) {
+          nav.classList.remove("open");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+
+    /* Scroll reveal */
+    const revealEls = document.querySelectorAll(".reveal");
+    if (revealEls.length) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
+      }, { threshold: 0.12 });
+      revealEls.forEach(el => io.observe(el));
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery | Aditya Organic Foods</title>
+  <meta name="description" content="Gallery of Aditya Organic Foods mushroom farm and produce." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="../index.html" aria-label="Aditya Organic Foods Home">
+        <span class="logo" aria-hidden="true"></span>
+        <span class="brand-text">Aditya Organic Foods</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="../index.html">Home</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <a class="btn btn-primary" href="contact.html">Request a Quote</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero reveal">
+      <div class="container">
+        <p class="kicker reveal">Gallery</p>
+        <h1 class="page-title reveal">Farm &amp; Product Photos</h1>
+        <p class="page-sub reveal">
+          You’ll add your own photos later. For now, this page shows a clean gallery layout that works on mobile and desktop.
+        </p>
+
+        <div class="page-actions reveal">
+          <a class="btn btn-primary" href="contact.html">Request a Quote</a>
+          <a class="btn btn-ghost" href="../index.html">Back to Home</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <h2 class="section-title reveal">Preview layout</h2>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item reveal">
+            <img src="../assets/images/mushroom-hero.jpg" data-lightbox="true" alt="Fresh harvest (placeholder)" loading="lazy" />
+            <figcaption>Fresh harvest (placeholder)</figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal">
+            <img src="../assets/images/mushroom-pile.jpg" data-lightbox="true" alt="Graded mushrooms (placeholder)" loading="lazy" />
+            <figcaption>Graded mushrooms (placeholder)</figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal">
+            <img src="../assets/images/mushroom-farm.jpg" data-lightbox="true" alt="Indoor growing rooms (placeholder)" loading="lazy" />
+            <figcaption>Indoor growing rooms (placeholder)</figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal">
+            <img src="../assets/images/mushroom-pile.jpg" data-lightbox="true" alt="Packing / dispatch (placeholder)" loading="lazy" />
+            <figcaption>Packing / dispatch (placeholder)</figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal">
+            <img src="../assets/images/mushroom-farm.jpg" data-lightbox="true" alt="Batch consistency (placeholder)" loading="lazy" />
+            <figcaption>Batch consistency (placeholder)</figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal">
+            <img src="../assets/images/mushroom-hero.jpg" data-lightbox="true" alt="Clean caps &amp; texture (placeholder)" loading="lazy" />
+            <figcaption>Clean caps &amp; texture (placeholder)</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <div class="cta-card reveal">
+          <div>
+            <h2>Want a steady supply?</h2>
+            <p>
+              Share your weekly quantity, preferred pack size, and delivery location.
+              We’ll respond quickly with availability and pricing.
+            </p>
+            <div class="cta-actions">
+              <a class="btn btn-primary" href="contact.html">Contact us</a>
+              <a class="btn btn-ghost" href="about.html">About our process</a>
+            </div>
+          </div>
+
+          <div class="cta-side">
+            <strong>Gallery tip</strong>
+            <ul>
+              <li>Use clear photos</li>
+              <li>Show packing &amp; dispatch</li>
+              <li>Add 1–2 farm-room shots</li>
+              <li>Keep lighting consistent</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX (Gallery only) -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Image preview">
+        <div class="lightbox-top">
+          <span id="lightboxCaption">Image</span>
+          <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+        </div>
+        <img class="lightbox-img" id="lightboxImg" alt="Preview" />
+      </div>
+    </div>
+
+    <!-- WhatsApp floating button (already added by you; keep if you want) -->
+    <!-- <a class="wa-float" href="https://wa.me/91YOURNUMBER" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a> -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer">
+      <p>© <span id="year"></span> Aditya Organic Foods</p>
+      <p>Rudrapur, Uttarakhand</p>
+    </div>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const btn = document.getElementById("menuBtn");
+    const nav = document.getElementById("navLinks");
+
+    if (btn && nav) {
+      btn.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("open");
+        btn.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      nav.querySelectorAll("a").forEach(a => {
+        a.addEventListener("click", () => {
+          nav.classList.remove("open");
+          btn.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!nav.classList.contains("open")) return;
+        const clickedInside = nav.contains(e.target) || btn.contains(e.target);
+        if (!clickedInside) {
+          nav.classList.remove("open");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+
+    /* Scroll reveal */
+    const revealEls = document.querySelectorAll(".reveal");
+    if (revealEls.length) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
+      }, { threshold: 0.12 });
+      revealEls.forEach(el => io.observe(el));
+    }
+
+    /* Lightbox (Gallery only) */
+    const lb = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lightboxImg");
+    const lbCap = document.getElementById("lightboxCaption");
+    const lbClose = document.getElementById("lightboxClose");
+
+    function openLightbox(src, caption) {
+      lbImg.src = src;
+      lbCap.textContent = caption || "Image";
+      lb.classList.add("open");
+      lb.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lb.classList.remove("open");
+      lb.setAttribute("aria-hidden", "true");
+      lbImg.src = "";
+      document.body.style.overflow = "";
+    }
+
+    const lbTargets = document.querySelectorAll('img[data-lightbox="true"]');
+    lbTargets.forEach(img => {
+      img.style.cursor = "zoom-in";
+      img.addEventListener("click", () => openLightbox(img.src, img.alt));
+    });
+
+    if (lb && lbClose) {
+      lbClose.addEventListener("click", closeLightbox);
+
+      lb.addEventListener("click", (e) => {
+        if (e.target === lb) closeLightbox();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && lb.classList.contains("open")) closeLightbox();
+      });
+    }
+  </script>
+</body>
+</html>
