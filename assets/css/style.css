@@ -1132,3 +1132,11 @@ textarea{
 @media (max-width: 900px){
   .cta-card.cta-finished{ padding: 18px; }
 }
+
+@supports (-webkit-touch-callout: none) {
+  .site-header{
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(11,18,32,0.95);
+  }
+}
