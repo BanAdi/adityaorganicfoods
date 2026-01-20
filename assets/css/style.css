@@ -29,6 +29,9 @@ img { max-width: 100%; height: auto; display: block; }
   background: rgba(11, 18, 32, 0.85);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  -webkit-backdrop-filter: blur(10px);
+  isolation: isolate;
 }
 
 .nav {
@@ -797,16 +800,27 @@ textarea{
 /* Header hidden until story ends */
 .site-header.header-hidden{
   opacity: 0;
+  visibility: hidden;        /* key: stops iOS painting it */
   pointer-events: none;
-  transform: translateY(-6px);
-  transition: opacity 260ms ease, transform 260ms ease;
-}
-.site-header.header-solid{
-  opacity: 1;
-  pointer-events: auto;
-  transform: none;
+  transform: translateY(-120%);
+
+  /* key: disable blur layer while hidden */
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: 0 !important;
+
+  transition: opacity 260ms ease, transform 260ms ease, visibility 0s linear 260ms;
 }
 
+.site-header.header-solid{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+
+  transition: opacity 260ms ease, transform 260ms ease;
+}
 /* Main content hidden until unlocked */
 .main-hidden{
   opacity: 0;
