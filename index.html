@@ -16,7 +16,7 @@
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
     <!-- Header starts hidden, becomes visible after story -->
-    <header class="site-header header-hidden" id="siteHeader">
+    <header class="site-header header-solid story-mode" id="siteHeader">
       <div class="container nav">
         <a
           class="brand"
@@ -47,12 +47,7 @@
       </div>
     </header>
     <!-- Brand-only header during story -->
-    <div class="brandbar" id="brandBar" aria-label="Aditya Organic Foods">
-      <div class="brandbar-inner">
-        <span class="logo" aria-hidden="true"></span>
-        <span class="brand-text">Aditya Organic Foods</span>
-      </div>
-    </div>
+    
     <!-- SCROLL STORY (locks the rest of the site until complete) -->
     <section class="story" id="story">
       <div class="story-sticky">
@@ -362,83 +357,67 @@
       }
 
       function onScroll() {
-        const rect = story.getBoundingClientRect();
-        const vh = window.innerHeight;
-        const total = rect.height - vh;
+  const rect = story.getBoundingClientRect();
+  const vh = window.innerHeight;
+  const total = rect.height - vh;
 
-        // how far into the story (0..1)
-        const scrolled = clamp(-rect.top / (total <= 0 ? 1 : total), 0, 1);
+  const scrolled = clamp(-rect.top / (total <= 0 ? 1 : total), 0, 1);
 
-        // top progress bar
-        if (progress) progress.style.transform = `scaleX(${scrolled})`;
+  if (progress) progress.style.transform = `scaleX(${scrolled})`;
 
-        // split into 4 stages
-        const t1 = clamp(scrolled / 0.33, 0, 1); // 1 -> 2
-        const t2 = clamp((scrolled - 0.33) / 0.33, 0, 1); // 2 -> 3
-        const t3 = clamp((scrolled - 0.66) / 0.34, 0, 1); // 3 -> 4
+  const t1 = clamp(scrolled / 0.33, 0, 1);
+  const t2 = clamp((scrolled - 0.33) / 0.33, 0, 1);
+  const t3 = clamp((scrolled - 0.66) / 0.34, 0, 1);
 
-        // opacities
-        const o1 = 1 - t1;
-        const o2 = t1 * (1 - t2);
-        const o3 = t2 * (1 - t3);
-        const o4 = t3;
+  const o1 = 1 - t1;
+  const o2 = t1 * (1 - t2);
+  const o3 = t2 * (1 - t3);
+  const o4 = t3;
 
-        setStage(o1, o2, o3, o4);
+  setStage(o1, o2, o3, o4);
 
-        // zoom-out feel
-        const scale = lerp(1.25, 1.02, scrolled);
-        [img1, img2, img3, img4].forEach((el) => {
-          if (!el) return;
-          el.style.transform = `scale(${scale})`;
-          el.style.filter = `blur(0px)`;
-        });
+  const scale = lerp(1.25, 1.02, scrolled);
+  [img1, img2, img3, img4].forEach((el) => {
+    if (!el) return;
+    el.style.transform = `scale(${scale})`;
+    el.style.filter = `blur(0px)`;
+  });
 
-        // text updates by stage
-        if (scrolled < 0.33) {
-          title.textContent = "From detail to delivery.";
-          sub.textContent =
-            "Freshness starts at the smallest details — clean texture, clean handling.";
-          myceliumUI.classList.remove("on");
-          menuReveal.classList.remove("on");
-        } else if (scrolled < 0.66) {
-          title.textContent = "The reveal.";
-          sub.textContent =
-            "A pattern becomes a mushroom — structure you can trust.";
-          myceliumUI.classList.remove("on");
-          menuReveal.classList.remove("on");
-        } else if (scrolled < 0.92) {
-          title.textContent = "The full picture.";
-          sub.textContent =
-            "Grown with consistency so buyers get predictable grading and supply.";
-          myceliumUI.classList.remove("on");
-          menuReveal.classList.remove("on");
-        } else {
-          title.textContent = "Underneath it all: the network.";
-          sub.textContent = "Quality you can count on — from room to route.";
-          myceliumUI.classList.add("on");
-          menuReveal.classList.add("on");
-        }
+  if (scrolled < 0.33) {
+    title.textContent = "From detail to delivery.";
+    sub.textContent = "Freshness starts at the smallest details — clean texture, clean handling.";
+    myceliumUI.classList.remove("on");
+    menuReveal.classList.remove("on");
+  } else if (scrolled < 0.66) {
+    title.textContent = "The reveal.";
+    sub.textContent = "A pattern becomes a mushroom — structure you can trust.";
+    myceliumUI.classList.remove("on");
+    menuReveal.classList.remove("on");
+  } else if (scrolled < 0.92) {
+    title.textContent = "The full picture.";
+    sub.textContent = "Grown with consistency so buyers get predictable grading and supply.";
+    myceliumUI.classList.remove("on");
+    menuReveal.classList.remove("on");
+  } else {
+    title.textContent = "Underneath it all: the network.";
+    sub.textContent = "Quality you can count on — from room to route.";
+    myceliumUI.classList.add("on");
+    menuReveal.classList.add("on");
+  }
 
-        // lock only once
-        window.__siteUnlocked = window.__siteUnlocked || false;
-        if (!window.__siteUnlocked && scrolled > 0.98) {
-          window.__siteUnlocked = true;
-        }
+  window.__siteUnlocked = window.__siteUnlocked || false;
+  if (!window.__siteUnlocked && scrolled > 0.98) window.__siteUnlocked = true;
 
-        // ALWAYS show header (brand only until unlocked)
-        header.classList.remove("header-hidden");
-        header.classList.add("header-solid");
-
-        // Main shows only after unlock
-        if (window.__siteUnlocked) {
-          main.classList.remove("main-hidden");
-        } else {
-          main.classList.add("main-hidden");
-        }
-
-        // Controls nav/button visibility via CSS
-        document.body.classList.toggle("unlocked", window.__siteUnlocked);
-      }
+  if (window.__siteUnlocked) {
+    header.classList.remove("story-mode");     // show full nav after story
+    header.classList.add("header-solid");
+    main.classList.remove("main-hidden");
+  } else {
+    header.classList.add("story-mode");        // brand-only during story
+    header.classList.add("header-solid");
+    main.classList.add("main-hidden");
+  }
+}
 
       window.addEventListener("scroll", onScroll, { passive: true });
       window.addEventListener("resize", onScroll);

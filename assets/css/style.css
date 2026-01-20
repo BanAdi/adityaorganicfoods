@@ -117,6 +117,15 @@ img { max-width: 100%; height: auto; display: block; }
   background: rgba(255,255,255,0.09);
 }
 
+/* Brand-only header during the scroll story */
+.site-header.story-mode .nav-links,
+.site-header.story-mode .btn.btn-primary,
+.site-header.story-mode .menu-btn{
+  display: none !important;
+}
+.site-header.story-mode .nav{
+  justify-content: flex-start;
+}
 /* =========================
    Hero
 ========================= */
