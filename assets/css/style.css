@@ -390,13 +390,13 @@ img { max-width: 100%; height: auto; display: block; }
 /* =========================
    Responsive (Layout)
 ========================= */
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
   .stats { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr; }
   .cta-card { grid-template-columns: 1fr; }
   .hero-content { padding: 42px 0 26px; }
   .media-card img { height: 200px; }
-}
+} */
 
 /* =========================
    Gallery Page
@@ -1139,4 +1139,11 @@ textarea{
     -webkit-backdrop-filter: none;
     background: rgba(11,18,32,0.95);
   }
+}
+
+/* While story is running: show only brand, hide nav + buttons */
+body:not(.unlocked) .nav-links,
+body:not(.unlocked) .btn.btn-primary,
+body:not(.unlocked) #menuBtn{
+  display: none !important;
 }
