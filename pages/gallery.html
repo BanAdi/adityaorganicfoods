@@ -51,7 +51,7 @@
         <p class="kicker reveal">Gallery</p>
         <h1 class="page-title reveal">Farm &amp; Product Photos</h1>
         <p class="page-sub reveal">
-          You’ll add your own photos later. For now, this page shows a clean gallery layout that works on mobile and desktop.
+          A quick look at product quality, grading, indoor rooms, and dispatch-ready batches.
         </p>
 
         <div class="page-actions reveal">
@@ -63,37 +63,37 @@
 
     <section class="section reveal">
       <div class="container">
-        <h2 class="section-title reveal">Preview layout</h2>
+        <h2 class="section-title reveal">Farm highlights</h2>
 
         <div class="gallery-grid">
           <figure class="gallery-item reveal">
-            <img src="../assets/Images/mushroom-hero.jpg" data-lightbox="true" alt="Fresh harvest (placeholder)" loading="lazy" />
-            <figcaption>Fresh harvest (placeholder)</figcaption>
+            <img src="../assets/Images/mushroom-hero.jpg" data-lightbox="true" alt="Fresh harvest button mushrooms" loading="lazy" />
+            <figcaption>Fresh harvest</figcaption>
           </figure>
 
           <figure class="gallery-item reveal">
-            <img src="../assets/Images/mushroom-pile.jpg" data-lightbox="true" alt="Graded mushrooms (placeholder)" loading="lazy" />
-            <figcaption>Graded mushrooms (placeholder)</figcaption>
+            <img src="../assets/Images/mushroom-pile.jpg" data-lightbox="true" alt="Graded mushrooms" loading="lazy" />
+            <figcaption>Graded mushrooms</figcaption>
           </figure>
 
           <figure class="gallery-item reveal">
-            <img src="../assets/Images/mushroom-farm.jpg" data-lightbox="true" alt="Indoor growing rooms (placeholder)" loading="lazy" />
-            <figcaption>Indoor growing rooms (placeholder)</figcaption>
+            <img src="../assets/Images/mushroom-farm.jpg" data-lightbox="true" alt="Indoor growing rooms" loading="lazy" />
+            <figcaption>Indoor growing rooms</figcaption>
           </figure>
 
           <figure class="gallery-item reveal">
-            <img src="../assets/Images/mushroom-pile.jpg" data-lightbox="true" alt="Packing / dispatch (placeholder)" loading="lazy" />
-            <figcaption>Packing / dispatch (placeholder)</figcaption>
+            <img src="../assets/Images/mushroom-pile.jpg" data-lightbox="true" alt="Packing and dispatch batch" loading="lazy" />
+            <figcaption>Packing and dispatch</figcaption>
           </figure>
 
           <figure class="gallery-item reveal">
-            <img src="../assets/Images/mushroom-farm.jpg" data-lightbox="true" alt="Batch consistency (placeholder)" loading="lazy" />
-            <figcaption>Batch consistency (placeholder)</figcaption>
+            <img src="../assets/Images/mushroom-farm.jpg" data-lightbox="true" alt="Batch consistency in cultivation rooms" loading="lazy" />
+            <figcaption>Batch consistency</figcaption>
           </figure>
 
           <figure class="gallery-item reveal">
-            <img src="../assets/Images/mushroom-hero.jpg" data-lightbox="true" alt="Clean caps &amp; texture (placeholder)" loading="lazy" />
-            <figcaption>Clean caps &amp; texture (placeholder)</figcaption>
+            <img src="../assets/Images/mushroom-hero.jpg" data-lightbox="true" alt="Clean mushroom caps and texture" loading="lazy" />
+            <figcaption>Clean caps and texture</figcaption>
           </figure>
         </div>
       </div>
@@ -139,7 +139,7 @@
     </div>
 
     <!-- WhatsApp floating button -->
-    <a class="wa-float" href="https://wa.me/91YOURNUMBER" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">Chat for Rates</a>
+    <a class="wa-float" href="https://wa.me/919997016034" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">Chat for Rates</a>
   </main>
 
   <footer class="site-footer">
@@ -149,83 +149,6 @@
     </div>
   </footer>
 
-  <script>
-    const yearEl = document.getElementById("year");
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-    const btn = document.getElementById("menuBtn");
-    const nav = document.getElementById("navLinks");
-
-    if (btn && nav) {
-      btn.addEventListener("click", () => {
-        const isOpen = nav.classList.toggle("open");
-        btn.setAttribute("aria-expanded", String(isOpen));
-      });
-
-      nav.querySelectorAll("a").forEach(a => {
-        a.addEventListener("click", () => {
-          nav.classList.remove("open");
-          btn.setAttribute("aria-expanded", "false");
-        });
-      });
-
-      document.addEventListener("click", (e) => {
-        if (!nav.classList.contains("open")) return;
-        const clickedInside = nav.contains(e.target) || btn.contains(e.target);
-        if (!clickedInside) {
-          nav.classList.remove("open");
-          btn.setAttribute("aria-expanded", "false");
-        }
-      });
-    }
-
-    /* Scroll reveal */
-    const revealEls = document.querySelectorAll(".reveal");
-    if (revealEls.length) {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
-      }, { threshold: 0.12 });
-      revealEls.forEach(el => io.observe(el));
-    }
-
-    /* Lightbox (Gallery only) */
-    const lb = document.getElementById("lightbox");
-    const lbImg = document.getElementById("lightboxImg");
-    const lbCap = document.getElementById("lightboxCaption");
-    const lbClose = document.getElementById("lightboxClose");
-
-    function openLightbox(src, caption) {
-      lbImg.src = src;
-      lbCap.textContent = caption || "Image";
-      lb.classList.add("open");
-      lb.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeLightbox() {
-      lb.classList.remove("open");
-      lb.setAttribute("aria-hidden", "true");
-      lbImg.src = "";
-      document.body.style.overflow = "";
-    }
-
-    const lbTargets = document.querySelectorAll('img[data-lightbox="true"]');
-    lbTargets.forEach(img => {
-      img.style.cursor = "zoom-in";
-      img.addEventListener("click", () => openLightbox(img.src, img.alt));
-    });
-
-    if (lb && lbClose) {
-      lbClose.addEventListener("click", closeLightbox);
-
-      lb.addEventListener("click", (e) => {
-        if (e.target === lb) closeLightbox();
-      });
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && lb.classList.contains("open")) closeLightbox();
-      });
-    }
-  </script>
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>

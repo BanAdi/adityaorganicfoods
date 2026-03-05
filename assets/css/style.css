@@ -1150,13 +1150,6 @@ textarea{
   }
 }
 
-/* While story is running: show only brand, hide nav + buttons */
-body:not(.unlocked) .nav-links,
-body:not(.unlocked) .btn.btn-primary,
-body:not(.unlocked) #menuBtn{
-  display: none !important;
-}
-
 /* ✅ Phone fix: stack the 3-column sections */
 @media (max-width: 900px) {
   .grid-3 { 
