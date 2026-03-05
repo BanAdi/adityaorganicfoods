@@ -600,6 +600,18 @@ textarea{
   color: rgba(226,232,240,0.68);
 }
 
+.hp-field{
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+}
+
+.h-captcha{
+  margin-top: 4px;
+}
+
 .contact-side{
   display: grid;
   gap: 14px;
