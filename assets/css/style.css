@@ -453,9 +453,10 @@ img { max-width: 100%; height: auto; display: block; }
   object-fit: cover;
 }
 
-.gallery-item video{
+.gallery-item .gallery-video{
   width: 100%;
   height: 220px;
+  max-height: 220px;
   object-fit: cover;
   display: block;
   background: rgba(0,0,0,0.25);
@@ -471,7 +472,10 @@ img { max-width: 100%; height: auto; display: block; }
 @media (max-width: 900px){
   .gallery-grid{ grid-template-columns: 1fr; }
   .gallery-item img{ height: 200px; }
-  .gallery-item video{ height: 200px; }
+  .gallery-item .gallery-video{
+    height: 200px;
+    max-height: 200px;
+  }
 }
 
 /* =========================
@@ -1171,7 +1175,7 @@ textarea{
 
   .media-card img,
   .gallery-item img,
-  .gallery-item video { 
+  .gallery-item .gallery-video { 
     height: 200px !important; 
   }
 }
