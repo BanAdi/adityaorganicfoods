@@ -453,13 +453,22 @@ img { max-width: 100%; height: auto; display: block; }
   object-fit: cover;
 }
 
-.gallery-item .gallery-video{
+.gallery-video-wrap{
+  position: relative;
   width: 100%;
   height: 220px;
-  max-height: 220px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.25);
+}
+
+.gallery-item .gallery-video{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100% !important;
+  max-height: none;
   object-fit: cover;
   display: block;
-  background: rgba(0,0,0,0.25);
 }
 
 .gallery-item figcaption{
@@ -472,10 +481,7 @@ img { max-width: 100%; height: auto; display: block; }
 @media (max-width: 900px){
   .gallery-grid{ grid-template-columns: 1fr; }
   .gallery-item img{ height: 200px; }
-  .gallery-item .gallery-video{
-    height: 200px;
-    max-height: 200px;
-  }
+  .gallery-video-wrap{ height: 200px; }
 }
 
 /* =========================
@@ -1175,7 +1181,7 @@ textarea{
 
   .media-card img,
   .gallery-item img,
-  .gallery-item .gallery-video { 
+  .gallery-video-wrap { 
     height: 200px !important; 
   }
 }
