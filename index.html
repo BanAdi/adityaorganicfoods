@@ -376,6 +376,21 @@
         return a + (b - a) * t;
       }
 
+      function unlockSite() {
+        window.__siteUnlocked = true;
+        header.classList.remove("story-mode");
+        header.classList.add("header-solid");
+        main.classList.remove("main-hidden");
+        document.body.classList.add("unlocked");
+      }
+
+      function lockSite() {
+        header.classList.add("story-mode");
+        header.classList.add("header-solid");
+        main.classList.add("main-hidden");
+        document.body.classList.remove("unlocked");
+      }
+
       function onScroll() {
   const rect = story.getBoundingClientRect();
   const vh = window.innerHeight;
@@ -426,16 +441,12 @@
   }
 
   window.__siteUnlocked = window.__siteUnlocked || false;
-  if (!window.__siteUnlocked && scrolled > 0.98) window.__siteUnlocked = true;
+  if (!window.__siteUnlocked && scrolled > 0.9) window.__siteUnlocked = true;
 
   if (window.__siteUnlocked) {
-    header.classList.remove("story-mode");     // show full nav after story
-    header.classList.add("header-solid");
-    main.classList.remove("main-hidden");
+    unlockSite();
   } else {
-    header.classList.add("story-mode");        // brand-only during story
-    header.classList.add("header-solid");
-    main.classList.add("main-hidden");
+    lockSite();
   }
 }
 
@@ -445,8 +456,8 @@
       const isMobile = window.matchMedia("(max-width: 900px)").matches;
 
       if (isMobile) {
-        // stop relying on scroll
-        window.removeEventListener("scroll", onScroll);
+        // keep scroll unlock, but avoid resize-trigger flicker on phone browsers
+        window.removeEventListener("resize", onScroll);
 
         let stage = 0;
         const stages = [
@@ -483,12 +494,11 @@
           if (i === 3) {
             myceliumUI.classList.add("on");
             menuReveal.classList.add("on");
-            header.classList.remove("header-hidden");
-            header.classList.add("header-solid");
-            main.classList.remove("main-hidden");
-          } else {
+            unlockSite();
+          } else if (!window.__siteUnlocked) {
             myceliumUI.classList.remove("on");
             menuReveal.classList.remove("on");
+            lockSite();
           }
         }
 
