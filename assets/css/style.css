@@ -453,6 +453,14 @@ img { max-width: 100%; height: auto; display: block; }
   object-fit: cover;
 }
 
+.gallery-item video{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  background: rgba(0,0,0,0.25);
+}
+
 .gallery-item figcaption{
   padding: 10px 12px;
   color: rgba(226,232,240,0.80);
@@ -463,6 +471,7 @@ img { max-width: 100%; height: auto; display: block; }
 @media (max-width: 900px){
   .gallery-grid{ grid-template-columns: 1fr; }
   .gallery-item img{ height: 200px; }
+  .gallery-item video{ height: 200px; }
 }
 
 /* =========================
@@ -1161,7 +1170,8 @@ textarea{
   }
 
   .media-card img,
-  .gallery-item img { 
+  .gallery-item img,
+  .gallery-item video { 
     height: 200px !important; 
   }
 }
